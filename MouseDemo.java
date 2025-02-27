@@ -10,14 +10,17 @@ import javax.swing.event.*;
  * @author Ira Goldstein
  * @version Spring 2025
  */
-public class MouseDemo implements Runnable, MouseListener, MouseMotionListener, MouseWheelListener {
+public class MouseDemo extends MouseAdapter implements Runnable{
 
+	String toDisplay = "Mouse Around and See!";
+	
 	/**
 	 * The run method to set up the graphical user interface
 	 */
 	@Override
 	public void run() {
 
+		
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		JFrame frame = new JFrame("MouseDemo");
 		frame.setPreferredSize(new Dimension(500, 500));
@@ -33,7 +36,7 @@ public class MouseDemo implements Runnable, MouseListener, MouseMotionListener, 
 
 				FontMetrics fm = g.getFontMetrics();
 
-				String toDisplay = "Mouse Around and See!";
+				
 				int stringWidth = fm.stringWidth(toDisplay);
 				int stringAscent = fm.getAscent();
 
