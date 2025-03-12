@@ -41,9 +41,25 @@ class ArtProject extends JPanel{
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         
-        
-        g.drawArc(20,20, 70, 50, 0, 100); 
-        g.drawRect(50,100,40,50);
+        g.setColor(Color.GREEN); 
+        g.fillArc(0, 300, 500, 500, 0,180); 
+        g.setColor(Color.YELLOW);
+        g.fillRect(170,170,150,150);
+        g.setColor(Color.RED);
+        int[] xPoints = {245, 145, 345};
+        int[] yPoints = {90, 190, 190};
+        g.fillPolygon(xPoints, yPoints, 3);
+        g.fillRect(230,270,30,50);
+        g.setColor(Color.YELLOW);
+        g.fillOval(230,290, 10,10);
+        g.setColor(Color.BLUE);
+        g.fillRect(185,260,30,30);
+        g.setColor(Color.BLACK);
+        g.drawLine(200, 260, 200, 290);
+        g.drawLine(185, 275, 215, 275);
+
+
+
         
     }
 }
@@ -79,6 +95,7 @@ public class HelloGraphics implements Runnable {
 
         // construct JPanel with a custom paintComponent method
         JPanel artpanel1 = new ArtProject();
+        artpanel1.setBackground(Color.CYAN);
         artframe.add(artpanel1);
 
         // display the window we've created
